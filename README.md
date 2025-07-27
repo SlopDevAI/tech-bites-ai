@@ -1,3 +1,4 @@
+# ![BannerLogo](https://raw.githubusercontent.com/SlopDevAI/tech-bites-ai/refs/heads/main/src/assets/techbites-logo-angular.png)
 # TechBites
 
 A responsive website for a fictional company, created as a school project and improved over time to demonstrate modern web development practices.
