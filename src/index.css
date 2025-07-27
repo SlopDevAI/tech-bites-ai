@@ -133,27 +133,70 @@ All colors MUST be HSL.
     @apply dark;
   }
   
-  /* Whitney font face declarations - add when you upload Whitney font files */
-  /*
-  @font-face {
-    font-family: 'Whitney';
-    src: url('/fonts/whitney-regular.woff2') format('woff2'),
-         url('/fonts/whitney-regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: 'Whitney';
-    src: url('/fonts/whitney-bold.woff2') format('woff2'),
-         url('/fonts/whitney-bold.woff') format('woff');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-  }
-  */
+/* Custom font faces */
+@font-face {
+  font-family: Whitney;
+  src: url('./assets/Whitney-Font/whitney.otf') format('opentype');
+  font-style: normal;
+  font-weight: normal;
 }
+
+@font-face {
+  font-family: Whitney;
+  src: url('./assets/Whitney-Font/whitneybold.otf') format('opentype');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  family: Whitney;
+  src: url('./assets/Whitney-Font/whitneyitalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: url('./assets/Whitney-Font/whitneylight.otf') format('opentype');
+  font-style: normal;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: url('./assets/Whitney-Font/whitneylightitalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: url('./assets/Whitney-Font/whitneymedium.otf') format('opentype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: url('./assets/Whitney-Font/whitneymediumitalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: url('./assets/Whitney-Font/whitneysemibold.otf') format('opentype');
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Whitney;
+  src: url('./assets/Whitney-Font/WhitneySemiboldItalic.otf') format('opentype');
+  font-style: italic;
+  font-weight: 600;
+}}
+
 
 @layer components {
   .tech-gradient {
