@@ -15,9 +15,9 @@ const Home = () => {
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
             {/* Logo Image */}
-            <div className="mb-8">
+            <div className="mb-8 mt-2">
               <img 
-                src="/original/img/LandingPageLogo.png" 
+                src="/assets/techbites-logo-angular.png" 
                 alt="TechBites Landing Logo"
                 className="max-w-full h-auto mx-auto max-h-96 glow-effect"
               />
@@ -47,7 +47,7 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 mb-8 animate-fade-in" style={{ animationDelay: '0.8s' }}>
               <Button asChild size="lg" className="bg-white text-primary-dark hover:bg-white/90 font-semibold px-8 py-3">
                 <Link to="/menu">
                   View Our Menu
