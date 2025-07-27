@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "./ThemeToggle";
-import techBitesLogo from "@/assets/techbites-logo-clear.png";
+import techBitesLogo from "@/assets/techbites-logo-angular.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
