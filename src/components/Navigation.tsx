@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "./ThemeToggle";
+import techBitesLogo from "@/assets/techbites-banner-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,13 +26,10 @@ const Navigation = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
             <img 
-              src="/original/img/BannerLogo.png" 
+              src={techBitesLogo} 
               alt="TechBites Logo" 
-              className="h-12 w-auto"
+              className="h-10 w-auto"
             />
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
-              TechBites
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
