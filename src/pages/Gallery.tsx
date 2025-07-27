@@ -114,7 +114,7 @@ const Gallery = () => {
           <h1 className="text-5xl md:text-6xl font-bold mb-5 bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent">
             Gallery
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mt-3">
             Take a visual journey through our tech-enhanced dining experience and stunning facilities
           </p>
         </div>

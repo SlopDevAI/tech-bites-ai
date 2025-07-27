@@ -17,7 +17,7 @@ const Home = () => {
             {/* Logo Image */}
             <div className="mb-8 mt-2">
               <img 
-                src="/assets/techbites-logo-angular.png" 
+                src="src\assets\techbites-logo-angular.png" 
                 alt="TechBites Landing Logo"
                 className="max-w-full h-auto mx-auto max-h-96 glow-effect"
               />
