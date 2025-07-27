@@ -19,7 +19,7 @@ const Home = () => {
               <img 
                 src="src\assets\techbites-logo-angular.png" 
                 alt="TechBites Landing Logo"
-                className="max-w-full h-auto mx-auto max-h-96 glow-effect"
+                className="max-w-full h-auto mx-auto max-h-96"
               />
             </div>
             
