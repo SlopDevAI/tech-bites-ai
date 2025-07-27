@@ -19,7 +19,7 @@ const services: Service[] = [
     id: 1,
     title: "Catering Service",
     description: "Like the look of our food? Order a Catering Service and get any amount of any food you want for any occasion!",
-    image: "/original/img/food1.png",
+    image: "/src/assets/signature-fish.jpg",
     icon: ChefHat,
     features: ["Tech-enhanced cooking", "Any quantity", "Perfect for events", "Fresh ingredients"]
   },
@@ -27,7 +27,7 @@ const services: Service[] = [
     id: 2,
     title: "Personal Chef Experience",
     description: "Don't like what food we offer? Have a recipe you want perfecting with a slice of tech? Hire our chefs and experience their expertise first-hand!",
-    image: "/original/img/chef1.jpg",
+    image: "/src/assets/chef-cooking.jpg",
     icon: ChefHat,
     features: ["Expert chefs", "Custom recipes", "Tech-enhanced cooking", "Personalized service"]
   },
@@ -35,7 +35,7 @@ const services: Service[] = [
     id: 3,
     title: "Private Venue Rental",
     description: "Want a night you and your friends/coworkers/family will never forget? Book one of our lounges or even the entire restaurant and cross off an amazing experience from your bucket list.",
-    image: "/original/img/seasideview.jpg",
+    image: "/src/assets/seaside-view.jpg",
     icon: Building,
     features: ["Entire restaurant", "Private lounges", "Immersive tech", "Unforgettable experience"]
   },
@@ -43,7 +43,7 @@ const services: Service[] = [
     id: 4,
     title: "Wedding Packages",
     description: "Getting married? Let us know and we'll give you the happiest day of your life in the freshest, never seen before, style!",
-    image: "/original/img/inside4.jpg",
+    image: "/src/assets/events-space.jpg",
     icon: Heart,
     features: ["Wedding specialists", "Unique tech elements", "Custom packages", "Dream venue"]
   },
@@ -51,7 +51,7 @@ const services: Service[] = [
     id: 5,
     title: "Interactive Menu Systems",
     description: "Like our menus? Have them for your own establishment! Commission a custom interactive menu today!",
-    image: "/original/img/menu.jpg",
+    image: "/src/assets/digital-menu.jpg",
     icon: Menu,
     features: ["Custom interactive menus", "For your business", "Tech integration", "Modern design"]
   },
@@ -59,7 +59,7 @@ const services: Service[] = [
     id: 6,
     title: "Holiday Home Experience",
     description: "Want the best of the best holiday home? Simply book your stay and live the best life with the best Malta has to offer!",
-    image: "/original/img/outside.jpg",
+    image: "/src/assets/restaurant-exterior.jpg",
     icon: Home,
     features: ["Luxury accommodation", "Malta experience", "Tech amenities", "Prime location"]
   }
