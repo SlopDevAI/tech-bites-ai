@@ -3,6 +3,21 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Import new realistic images
+import restaurantExterior from "@/assets/restaurant-exterior.jpg";
+import diningInterior from "@/assets/dining-interior.jpg";
+import eventsSpace from "@/assets/events-space.jpg";
+import cocktailBar from "@/assets/cocktail-bar.jpg";
+import nightclubSuite from "@/assets/nightclub-suite.jpg";
+import seasideView from "@/assets/seaside-view.jpg";
+import signatureFish from "@/assets/signature-fish.jpg";
+import wagyuSteak from "@/assets/wagyu-steak.jpg";
+import dessertSelection from "@/assets/dessert-selection.jpg";
+import tokyoDish from "@/assets/tokyo-dish.jpg";
+import digitalMenu from "@/assets/digital-menu.jpg";
+import chefCooking from "@/assets/chef-cooking.jpg";
+import cleanKitchen from "@/assets/clean-kitchen.jpg";
+
 interface GalleryImage {
   src: string;
   caption: string;
@@ -11,68 +26,68 @@ interface GalleryImage {
 
 const galleryImages: GalleryImage[] = [
   {
-    src: "/original/img/outside.jpg",
-    caption: "The outside of our ultra-clean, fancy, futuristic establishment.",
+    src: restaurantExterior,
+    caption: "Our stunning Mediterranean restaurant exterior in beautiful Ghadira, Malta - where technology meets seaside dining.",
     alt: "TechBites exterior"
   },
   {
-    src: "/original/img/inside1.jpg",
-    caption: "Our exquisite Events & Party area, where pre-booked guests can host all forms of events!",
+    src: eventsSpace,
+    caption: "Our exquisite Events & Party area, where pre-booked guests can host all forms of events with cutting-edge technology!",
     alt: "Events and party area"
   },
   {
-    src: "/original/img/inside2.jpg",
-    caption: "We specialise in only the best experience here at TechBites, just look at the lovely ambience of this area!",
-    alt: "Restaurant ambience"
+    src: diningInterior,
+    caption: "Experience the perfect blend of elegance and technology in our main dining area with interactive tables and ambient lighting.",
+    alt: "Restaurant dining area"
   },
   {
-    src: "/original/img/inside3.jpg",
-    caption: "The inside, adult area where the best cocktails on the island can be ordered.",
-    alt: "Adult cocktail area"
+    src: cocktailBar,
+    caption: "Our sophisticated cocktail bar area where the finest drinks on the island are crafted with precision technology.",
+    alt: "Cocktail bar area"
   },
   {
-    src: "/original/img/inside4.jpg",
-    caption: "Our nightclub suite, where your dreams will come true.",
+    src: nightclubSuite,
+    caption: "Our exclusive nightclub lounge - where unforgettable evenings come to life with immersive audiovisual experiences.",
     alt: "Nightclub suite"
   },
   {
-    src: "/original/img/seasideview.jpg",
-    caption: "The claustrophobic inside too much for you? Come outside to experience the lovely fresh air and breathtaking view.",
+    src: seasideView,
+    caption: "Step outside to our terrace and enjoy the breathtaking Mediterranean views overlooking Malta's pristine coastline.",
     alt: "Seaside view"
   },
   {
-    src: "/original/img/food1.png",
-    caption: "Our best fish dish, cooked perfectly to preserve the blueness of the skin while still being safe to eat.",
+    src: signatureFish,
+    caption: "Our signature fish dish - expertly prepared using precision cooking techniques to preserve freshness and enhance natural flavors.",
     alt: "Signature fish dish"
   },
   {
-    src: "/original/img/food2.png",
-    caption: "Our exquisitely made Wagyu A5 steak, shipped straight from japan.",
+    src: wagyuSteak,
+    caption: "Premium Wagyu A5 steak, shipped directly from Japan and prepared with our cutting-edge cooking technology.",
     alt: "Wagyu A5 steak"
   },
   {
-    src: "/original/img/food3.png",
-    caption: "Our drool-inducing desserts, the most amazing end to a great meal.",
+    src: dessertSelection,
+    caption: "Our artisanal dessert selection - the perfect finale to your tech-enhanced dining experience.",
     alt: "Dessert selection"
   },
   {
-    src: "/original/img/food4.jpg",
-    caption: "Western dishes not your style? How about something straight out of Tokyo?",
+    src: tokyoDish,
+    caption: "Authentic Japanese cuisine meets modern technology - experience flavors straight from Tokyo's finest establishments.",
     alt: "Tokyo-style dish"
   },
   {
-    src: "/original/img/menu.jpg",
-    caption: "Our Interactive Menus are sure to catch your eye and show you something you'd love to eat.",
+    src: digitalMenu,
+    caption: "Our interactive digital menu system - browse, customize, and order with just a touch.",
     alt: "Interactive menu display"
   },
   {
-    src: "/original/img/chef1.jpg",
-    caption: "Our expert chefs, ready to cook you the best meals!",
+    src: chefCooking,
+    caption: "Our expert chefs combining traditional culinary mastery with cutting-edge cooking technology.",
     alt: "Expert chef at work"
   },
   {
-    src: "/original/img/chef2.jpg",
-    caption: "Just look how clean they keep their environment-",
+    src: cleanKitchen,
+    caption: "Our immaculate kitchen facilities - where precision, cleanliness, and technology create culinary excellence.",
     alt: "Clean kitchen environment"
   }
 ];

@@ -7,28 +7,29 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  /* Light mode colors */
   :root {
-    /* TechBites Brand Colors */
-    --primary: 180 100% 50%; /* Aqua/Cyan */
-    --primary-foreground: 222 84% 4.9%;
-    --primary-light: 185 100% 69%; /* Light aqua */
+    /* TechBites Brand Colors - Enhanced for better contrast */
+    --primary: 180 100% 40%; /* Darker aqua for better contrast in light mode */
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 185 100% 55%; /* Adjusted light aqua */
     --primary-dark: 220 91% 25%; /* Navy blue */
     
-    --secondary: 210 40% 98%;
-    --secondary-foreground: 222.2 84% 4.9%;
+    --secondary: 215 25% 27%; /* Darker secondary for light mode */
+    --secondary-foreground: 0 0% 98%;
     
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215.4 16.3% 35%; /* Darker for better contrast */
     
-    --accent: 210 40% 96%;
+    --accent: 210 40% 94%;
     --accent-foreground: 222.2 84% 4.9%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
+    --border: 214.3 31.8% 85%; /* Stronger border */
+    --input: 214.3 31.8% 88%; /* Better input visibility */
+    --ring: 180 100% 40%; /* Match primary */
     
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
@@ -41,14 +42,15 @@ All colors MUST be HSL.
     
     --radius: 0.5rem;
     
-    /* TechBites Gradients */
+    /* TechBites Gradients - Enhanced */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
     --gradient-hero: linear-gradient(to bottom right, hsl(var(--primary)), hsl(var(--primary-dark)));
     --gradient-section: linear-gradient(135deg, hsl(var(--primary-light)), hsl(var(--primary)));
     
-    /* Shadows with brand colors */
-    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
-    --shadow-card: 0 10px 25px -5px hsl(var(--primary-dark) / 0.1);
+    /* Enhanced shadows for light mode */
+    --shadow-glow: 0 0 30px hsl(var(--primary) / 0.4);
+    --shadow-card: 0 10px 25px -5px hsl(var(--primary-dark) / 0.15), 0 4px 6px -2px hsl(var(--primary-dark) / 0.1);
+    --shadow-strong: 0 20px 50px -10px hsl(var(--primary-dark) / 0.2);
     
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -63,18 +65,22 @@ All colors MUST be HSL.
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
+  /* Dark mode colors - Set as default */
   .dark {
+    /* TechBites Brand Colors for Dark Mode */
+    --primary: 180 100% 50%; /* Bright aqua for dark mode */
+    --primary-foreground: 222 84% 4.9%;
+    --primary-light: 185 100% 69%; /* Light aqua */
+    --primary-dark: 220 91% 25%; /* Navy blue */
+    
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
-    --card: 222.2 84% 4.9%;
+    --card: 217.2 32.6% 12%; /* Slightly lighter than background */
     --card-foreground: 210 40% 98%;
 
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -85,12 +91,23 @@ All colors MUST be HSL.
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62.8% 50%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 180 100% 50%; /* Match primary */
+    
+    /* Enhanced gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-hero: linear-gradient(to bottom right, hsl(var(--primary)), hsl(var(--primary-dark)));
+    --gradient-section: linear-gradient(135deg, hsl(var(--primary-light)), hsl(var(--primary)));
+    
+    /* Enhanced shadows for dark mode */
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.4);
+    --shadow-card: 0 10px 25px -5px hsl(0 0% 0% / 0.3), 0 4px 6px -2px hsl(0 0% 0% / 0.2);
+    --shadow-strong: 0 20px 50px -10px hsl(0 0% 0% / 0.4);
+    
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -109,6 +126,11 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Default to dark mode */
+  html {
+    @apply dark;
   }
 }
 
@@ -131,6 +153,10 @@ All colors MUST be HSL.
   
   .card-shadow {
     box-shadow: var(--shadow-card);
+  }
+  
+  .strong-shadow {
+    box-shadow: var(--shadow-strong);
   }
   
   .smooth-transition {
