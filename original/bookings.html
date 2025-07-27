@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+
+<!-- Used resources: w3schools & https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript !-->
+
+<html lang="en">
+    <head>
+        <title>TechBites Malta</title>
+        <link rel="stylesheet" href="css.css">
+        <link rel="stylesheet" href="gallery.css">
+        <link rel="icon" type="image/x-icon" href="img/BannerLogo.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
+        
+    </head>
+    <body>
+        <div id="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                        <a href="bookings.html">Bookings</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <h1 class="bookingsHeader">What can we do for you?</h1>
+        
+        <div class="bookings">
+            <div class="Service">
+                <div class="foodImages">
+                
+                    <div class="food fade">
+                        <img src="img/food1.png" style="width:100%">       <!-- Please do note that I recognise that this is a CSS line, but when I attempted to remove it the page broke. !-->
+                    </div>
+                
+                    <div class="food fade">
+                        <img src="img/food2.png" style="width:100%">
+                    </div>
+                
+                    <div class="food fade">
+                        <img src="img/food3.png" style="width:100%">
+                    </div>
+                
+                    <div class="food fade">
+                        <img src="img/food4.jpg" style="width:100%">
+                    </div>
+                
+                </div>
+                
+                <h3 class="bookingsText">Like the look of our food? Order a Catering Service and get any amount of any food you want for any occasion!</h3>
+                
+                <button class="BookWithUs" onclick="bookWithUs(12)">Book with us today!</button>
+            </div>
+            
+            <!-- Copy-Paste to make it easier: 
+            <div class="Service">
+                <div class="Images">
+                    <img src="/img/" style="width:100%">
+                </div>
+                    <h3 class="bookingsText"></h3>
+                    <button class="BookWithUs" onclick="bookWithUs(12)">Book with us today!</button>
+            </div>
+            !-->
+            
+            <div class="Service">
+                <div class="Images">
+                        <img src="img/chef1.jpg" style="width:100%">
+                
+                </div>
+                
+                <h3 class="bookingsText">Don't like what food we offer? Have a recipe you want perfecting with a slice of tech? Hire our chefs and experience their expertise first-hand!</h3>
+                
+                <button class="BookWithUs" onclick="bookWithUs(12)">Book with us today!</button>
+            </div>
+            
+            <div class="Service">
+                <div class="Images">
+                    <img src="img/seasideview.jpg" style="width:100%">
+                </div>
+                    <h3 class="bookingsText">Want a night you and your friends/coworkers/family will never forget? Book one of our lounges or even the entire restaurant and cross off an amazing experience from your bucket list.</h3>
+                    <button class="BookWithUs" onclick="bookWithUs(12)">Book with us today!</button>
+            </div>
+            
+            <div class="Service">
+                <div class="Images">
+                    <img src="img/inside4.jpg" style="width:100%">
+                </div>
+                    <h3 class="bookingsText">Getting married? Let us know and we'll give you the happiest day of your life in the freshest, never seen before, style!</h3>
+                    <button class="BookWithUs" onclick="bookWithUs(12)">Book with us today!</button>
+            </div>
+            
+            <div class="Service">
+                <div class="Images">
+                    <img src="img/menu.jpg" style="width:100%">
+                </div>
+                    <h3 class="bookingsText">Like our menus? Have them for your own establishment! Commission a custom interactive menu today!</h3>
+                    <button class="BookWithUs" onclick="bookWithUs(12)">Book with us today!</button>
+            </div>
+            
+            <div class="Service">
+                <div class="Images">
+                    <img src="img/outside.jpg" style="width:100%">
+                </div>
+                    <h3 class="bookingsText">Want the best of the best holiday home? Simply book your stay and live the best life with the best Malta has to offer!</h3>
+                    <button class="BookWithUs" onclick="bookWithUs(12)">Book with us today!</button>
+            </div>
+            
+        </div>
+
+        
+<!-- Note: I tried to make the changing images work for every service, but it ended up just derendering the image entirely and having it not work, so I left it working for the first booking option
+           just as a little neat feature. If I were to continue with this website in my own time, I would make this functional across all images. !-->
+        
+<script>
+
+let slideIndex = 0;
+foodSlides();
+
+function foodSlides() {
+  let i;
+  let slides = document.getElementsByClassName("food");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  slides[slideIndex-1].style.display = "block";  
+  setTimeout(foodSlides, 4000); // Change image every 2 seconds
+}
+
+</script>
+
+<script>
+    
+function bookWithUs(length) {
+    let result = '';
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const charactersLength = characters.length;
+    let counter = 0;
+    while (counter < length) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+      counter += 1;
+    }
+  alert("Thank you for expressing your interest in working with us! Please contact us using the Contact Form and provide us with this unique code:\n\n" + result);
+}
+    
+</script>        
+
+    </body>
+    
+    <footer class="footer">
+        <h2>&copy; TechBites 2023 - by Gabriel Jackson</h2>
+    </footer>
+    
+
+    
+</html>

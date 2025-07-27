@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<!-- Used resources: w3schools.com & 30secondsofcode.org !-->
+
+<html lang="en">
+    <head>
+        <title>TechBites Malta</title>
+        <link rel="stylesheet" href="css.css">
+        <link rel="icon" type="image/x-icon" href="img/BannerLogo.png">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>
+    </head>
+    <body>
+        <div id="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                        <a href="bookings.html">Bookings</a>
+                        <a href="gallery.html">Gallery</a>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+            <section class="main">
+                <section class="contactbg">
+                    
+    <div class="contactFormText">
+        <form action="mailto:gabriel.winston.jackson@gmail.com&subject=Feedback to TechBites" method="get" enctype="text/plain">
+            <label for="fname"><strong>Name / Alias (required)</strong></label><br>
+            <input type="text" id="fname" name="fname" minlength="2" value="" required><br><br>
+            <label for="eaddress"><strong>Email (required)</strong></label><br>
+            <input type="email" id="eaddress" name="eaddress" value="" required><br><br>
+            <label for="contactno"><strong>Phone number</strong></label><br>
+            <input type="tel" id="contactno" name="contactno" value=""><br><br>
+            <label for="comment"><strong>How can we help?</strong></label><br>
+            <input class="comment" type="text" id="comment" name="comment" value="" required><br><br><br><br>
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form>
+    </div>
+                </section>
+            
+        </div>
+    </body>
+    
+    <footer class="footer">
+        <h2>&copy; TechBites 2023 - by Gabriel Jackson</h2>
+    </footer>
+    
+</html>
