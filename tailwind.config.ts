@@ -18,6 +18,12 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				// Whitney font (add your Whitney font files to /public/fonts/)
+				'whitney': ['Whitney', 'Inter', 'system-ui', 'sans-serif'],
+				// Fallback using Inter until Whitney is added
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "./ThemeToggle";
-import techBitesLogo from "@/assets/techbites-banner-logo.png";
+import techBitesLogo from "@/assets/techbites-logo-clear.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +28,7 @@ const Navigation = () => {
             <img 
               src={techBitesLogo} 
               alt="TechBites Logo" 
-              className="h-10 w-auto"
+              className="h-16 w-auto opacity-90 hover:opacity-100 transition-opacity"
             />
           </Link>
 
