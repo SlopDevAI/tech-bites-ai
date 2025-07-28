@@ -18,6 +18,7 @@ const formSchema = z.object({
     message: "Please enter a valid email address.",
   }),
   phone: z.string().optional(),
+  bookingCode: z.string().optional(),
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
   }),
@@ -33,6 +34,7 @@ const Contact = () => {
       name: "",
       email: "",
       phone: "",
+      bookingCode: "",
       message: "",
     },
   });
@@ -132,6 +134,24 @@ const Contact = () => {
                   
                   <FormField
                     control={form.control}
+                    name="bookingCode"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Booking Code (Optional)</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Enter your booking code if you have one"
+                            {...field}
+                            className="h-12"
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  
+                  <FormField
+                    control={form.control}
                     name="message"
                     render={({ field }) => (
                       <FormItem>
@@ -148,7 +168,7 @@ const Contact = () => {
                     )}
                   />
                   
-                  <div className="flex gap-4">
+                  <div className="flex gap-4 pt-2">
                     <Button
                       type="submit"
                       disabled={isSubmitting}

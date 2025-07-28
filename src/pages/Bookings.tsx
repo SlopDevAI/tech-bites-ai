@@ -179,12 +179,12 @@ const Bookings = () => {
                           Learn More
                         </Button>
                       </DialogTrigger>
-                      <DialogContent className="max-w-2xl">
-                        <DialogHeader>
-                          <DialogTitle className="text-2xl font-bold text-primary">
-                            {service.title}
-                          </DialogTitle>
-                        </DialogHeader>
+                       <DialogContent className="max-w-2xl">
+                         <DialogHeader>
+                           <DialogTitle className="text-2xl font-bold text-primary">
+                             {selectedService?.title}
+                           </DialogTitle>
+                         </DialogHeader>
                         <div className="space-y-4">
                           {selectedService?.carouselImages ? (
                             <div className="relative">
