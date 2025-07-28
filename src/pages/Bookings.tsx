@@ -3,7 +3,18 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
-import { ChefHat, Calendar, Home, Heart, Menu, Building } from "lucide-react";
+import { ChefHat, Calendar, Home, Heart, Menu, Building, ChevronLeft, ChevronRight } from "lucide-react";
+
+// Import food images for catering carousel
+import signatureFish from "@/assets/signature-fish.jpg";
+import wagyuSteak from "@/assets/wagyu-steak.jpg";
+import dessertSelection from "@/assets/dessert-selection.jpg";
+import tokyoDish from "@/assets/tokyo-dish.jpg";
+
+// Import holiday home images for carousel
+import restaurantExterior from "@/assets/restaurant-exterior.jpg";
+import seasideView from "@/assets/seaside-view.jpg";
+import diningInterior from "@/assets/dining-interior.jpg";
 
 interface Service {
   id: number;
@@ -12,6 +23,7 @@ interface Service {
   image: string;
   icon: any;
   features: string[];
+  carouselImages?: string[];
 }
 
 const services: Service[] = [
@@ -21,7 +33,8 @@ const services: Service[] = [
     description: "Like the look of our food? Order a Catering Service and get any amount of any food you want for any occasion!",
     image: "/src/assets/catering-service.jpg",
     icon: ChefHat,
-    features: ["Tech-enhanced cooking", "Any quantity", "Perfect for events", "Fresh ingredients"]
+    features: ["Tech-enhanced cooking", "Any quantity", "Perfect for events", "Fresh ingredients"],
+    carouselImages: [signatureFish, wagyuSteak, dessertSelection, tokyoDish]
   },
   {
     id: 2,
@@ -61,12 +74,14 @@ const services: Service[] = [
     description: "Want the best of the best holiday home? Simply book your stay and live the best life with the best Malta has to offer!",
     image: "/src/assets/holiday-home.jpg",
     icon: Home,
-    features: ["Luxury accommodation", "Malta experience", "Tech amenities", "Prime location"]
+    features: ["Luxury accommodation", "Malta experience", "Tech amenities", "Prime location"],
+    carouselImages: [restaurantExterior, seasideView, diningInterior]
   }
 ];
 
 const Bookings = () => {
   const [selectedService, setSelectedService] = useState<Service | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const generateBookingCode = () => {
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -76,6 +91,25 @@ const Bookings = () => {
     }
     
     alert(`Thank you for expressing your interest in working with us! Please contact us using the Contact Form and provide us with this unique code:\n\n${result}`);
+  };
+
+  const nextImage = () => {
+    if (selectedService?.carouselImages) {
+      setCurrentImageIndex((prev) => (prev + 1) % selectedService.carouselImages!.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedService?.carouselImages) {
+      setCurrentImageIndex((prev) => 
+        prev === 0 ? selectedService.carouselImages!.length - 1 : prev - 1
+      );
+    }
+  };
+
+  const handleServiceSelect = (service: Service) => {
+    setSelectedService(service);
+    setCurrentImageIndex(0);
   };
 
   return (
@@ -136,11 +170,11 @@ const Bookings = () => {
                   <div className="flex gap-2">
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button 
-                          variant="outline" 
-                          size="sm" 
-                          className="flex-1"
-                          onClick={() => setSelectedService(service)}
+                         <Button 
+                           variant="outline" 
+                           size="sm" 
+                           className="flex-1"
+                           onClick={() => handleServiceSelect(service)}
                         >
                           Learn More
                         </Button>
@@ -152,18 +186,67 @@ const Bookings = () => {
                           </DialogTitle>
                         </DialogHeader>
                         <div className="space-y-4">
-                          <img
-                            src={service.image}
-                            alt={service.title}
-                            className="w-full h-64 object-cover rounded-lg"
-                          />
+                          {selectedService?.carouselImages ? (
+                            <div className="relative">
+                              <div className="overflow-hidden rounded-lg">
+                                <img
+                                  src={selectedService.carouselImages[currentImageIndex]}
+                                  alt={`${selectedService.title} ${currentImageIndex + 1}`}
+                                  className="w-full h-64 object-cover transition-all duration-500 ease-in-out transform"
+                                  style={{ 
+                                    transform: `translateX(0%)`,
+                                  }}
+                                />
+                              </div>
+                              
+                              {selectedService.carouselImages.length > 1 && (
+                                <>
+                                  <Button
+                                    variant="secondary"
+                                    size="icon"
+                                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+                                    onClick={prevImage}
+                                  >
+                                    <ChevronLeft className="h-4 w-4" />
+                                  </Button>
+                                  
+                                  <Button
+                                    variant="secondary"
+                                    size="icon"
+                                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white"
+                                    onClick={nextImage}
+                                  >
+                                    <ChevronRight className="h-4 w-4" />
+                                  </Button>
+                                  
+                                  <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                                    {selectedService.carouselImages.map((_, index) => (
+                                      <button
+                                        key={index}
+                                        className={`w-2 h-2 rounded-full transition-colors ${
+                                          index === currentImageIndex ? 'bg-primary' : 'bg-white/50'
+                                        }`}
+                                        onClick={() => setCurrentImageIndex(index)}
+                                      />
+                                    ))}
+                                  </div>
+                                </>
+                              )}
+                            </div>
+                          ) : (
+                            <img
+                              src={selectedService?.image}
+                              alt={selectedService?.title}
+                              className="w-full h-64 object-cover rounded-lg"
+                            />
+                          )}
                           <p className="text-muted-foreground leading-relaxed">
-                            {service.description}
+                            {selectedService?.description}
                           </p>
                           <div>
                             <h4 className="font-semibold mb-2">Features:</h4>
                             <div className="grid grid-cols-2 gap-2">
-                              {service.features.map((feature, index) => (
+                              {selectedService?.features.map((feature, index) => (
                                 <div key={index} className="flex items-center space-x-2">
                                   <div className="w-2 h-2 bg-primary rounded-full"></div>
                                   <span className="text-sm">{feature}</span>
