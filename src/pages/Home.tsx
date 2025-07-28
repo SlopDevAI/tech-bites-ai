@@ -17,9 +17,9 @@ const Home = () => {
             {/* Logo Image */}
             <div className="mb-8 mt-2">
               <img 
-                src="src\assets\techbites-logo-angular.png" 
+                src="/src/assets/techbites-logo-angular.png" 
                 alt="TechBites Landing Logo"
-                className="max-w-full h-auto mx-auto max-h-96"
+                className="max-w-full h-auto mx-auto max-h-80"
               />
             </div>
             
@@ -47,7 +47,7 @@ const Home = () => {
               </p>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8 mb-8 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-12 mb-16 animate-fade-in" style={{ animationDelay: '0.8s' }}>
               <Button asChild size="lg" className="bg-white text-primary-dark hover:bg-white/90 font-semibold px-8 py-3">
                 <Link to="/menu">
                   View Our Menu
